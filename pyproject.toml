@@ -2,7 +2,7 @@
 name = "hexlet-code"
 version = "0.1.0"
 description = ""
-authors = ["ElenaBronina <aplicaziya@yandex.ru>"]
+authors = ['Elena Bronina <aplicaziya@yandex.ru>']
 readme = "README.md"
 packages = [
   { include = "brain_games" },
@@ -10,6 +10,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
+prompt = "^0.4.1"
 
 [tool.poetry.dev-dependencies]
 
