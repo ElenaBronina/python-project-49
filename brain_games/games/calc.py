@@ -1,7 +1,6 @@
-#!/usr/bin/env python3
 import random
-from logic import answer
-from logic import welcome
+from brain_games.games.logic import answer
+from brain_games.games.logic import welcome
 
 
 def sum():
@@ -45,15 +44,3 @@ def brain_calc():
         print('Correct!')
         i = i + 1
     print(f'Congratulations, {name_user}!')
-
-
-def main():
-    sum()
-    diff()
-    mult()
-    random_choice()
-    brain_calc()
-
-
-if __name__ == '__main__':
-    main()
