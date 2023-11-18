@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import prompt
 import random
-from brain_games.games.logic import welcome
+from brain_games.logic import welcome
 
 
 def question():
@@ -24,8 +24,9 @@ def even_number():
                 right_answer = 'yes'
             else:
                 right_answer = 'no'
-            return print(f"{start_game[1]} is wrong answer ;(.\
-            Correct answer was {right_answer}.\nLet's try again, {name_user}!")
+            return print(f"{start_game[1]} is wrong answer ;(. \
+Correct answer was {right_answer}. \
+\nLet's try again, {name_user}!")
         print('Correct!')
         i = i + 1
     return print(f'Congratulations, {name_user}!')

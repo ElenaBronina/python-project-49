@@ -1,7 +1,7 @@
 import random
 import math
-from brain_games.games.logic import answer
-from brain_games.games.logic import welcome
+from brain_games.logic import answer
+from brain_games.logic import welcome
 
 
 def is_prime():
@@ -35,7 +35,7 @@ def brain_prime():
             print('Correct!')
             i = i + 1
         elif answer_user == 'no' and prime or answer_user == 'yes' and not prime:
-            return print(f"{answer_user} is wrong answer ;(.\
-            Correct answer was {right_answer}.\
-            Let's try again, {name_user}")
+            return print(f"{answer_user} is wrong answer ;(. \
+Correct answer was {right_answer}. \
+\nLet's try again, {name_user}!")
     print(f'Congratulations, {name_user}!')
