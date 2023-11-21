@@ -4,13 +4,16 @@ from brain_games.logic import welcome
 
 
 def progression():
-    a = random.choice(range(5, 10))
-    b = random.choice(range(20, 100))
-    c = random.choice(range(2, 10))
-    progression = list(range(a, b, c))
-    i = progression.index(random.choice(progression))
-    n = progression[i]
-    return (progression, i, n)
+    length_progression = random.randint(5, 10)
+    start_progression = random.randint(50, 100)
+    step_progression = random.choice(range(2, 10))
+    progression = [i for i in range(start_progression,
+                                    length_progression * step_progression
+                                    + start_progression,
+                                    step_progression)]
+    index_in_progression = progression.index(random.choice(progression))
+    number_in_progression = progression[index_in_progression]
+    return (progression, index_in_progression, number_in_progression)
 
 
 def brain_progression():
@@ -18,11 +21,12 @@ def brain_progression():
     print('What number is missing in the progression?')
     i = 1
     while i <= 3:
-        exercise = progression()
-        question_user = exercise[0]
-        right_answer = exercise[2]
-        question_user[exercise[1]] = ("..")
-        print(f'Question: {question_user}')
+        game_conditions = progression()
+        question_user = game_conditions[0]
+        right_answer = game_conditions[2]
+        question_user[game_conditions[1]] = '..'
+        finally_question = ' '.join(str(x) for x in question_user)
+        print(f'Question: {finally_question}')
         answer_user = answer()
         if answer_user != str(right_answer):
             return print(f"{answer_user} is wrong answer ;(. \
