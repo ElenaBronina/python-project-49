@@ -34,7 +34,8 @@ def brain_prime():
         if answer_user == 'no' and not prime:
             print('Correct!')
             i = i + 1
-        elif answer_user == 'no' and prime or answer_user == 'yes' and not prime:
+        elif answer_user == 'no' and prime or answer_user == 'yes' \
+        and not prime:
             return print(f"{answer_user} is wrong answer ;(. \
 Correct answer was {right_answer}. \
 \nLet's try again, {name_user}!")
