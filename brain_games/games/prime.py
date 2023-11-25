@@ -24,18 +24,19 @@ def brain_prime():
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
     i = 1
     while i <= 3:
-        random_number, prime = is_prime()
-        right_answer = 'yes' if prime else 'no'
-        print(f'Question: {random_number}')
+        prime_or_not = is_prime()
+        right_answer = 'yes' if prime_or_not[1] else 'no'
+        print(f'Question: {prime_or_not[0]}')
         answer_user = answer()
-        if answer_user == 'yes' and prime:
+        if answer_user == 'yes' and prime_or_not[1]:
             print('Correct!')
             i = i + 1
-        if answer_user == 'no' and not prime:
+        if answer_user == 'no' and not prime_or_not[1]:
             print('Correct!')
             i = i + 1
-        elif (answer_user == 'no'
-                and prime or answer_user == 'yes' and not prime):
+        elif (answer_user != 'yes'
+                and prime_or_not[1] or answer_user != 'no'
+                and not prime_or_not[1]):
             return print(f"{answer_user} is wrong answer ;(. \
 Correct answer was {right_answer}. \
 \nLet's try again, {name_user}!")
